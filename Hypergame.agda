@@ -7,7 +7,7 @@ open import Data.Empty
 {-
   We can fully describe a round of a turn-based single-player game using the following data:
   * the set of possible moves that we can make in the current round, and
-  * for each possible move m, fully describing the subsequent round f(m).
+  * for each possible move m, a full description of the subsequent round f(m).
 -}
 
 record Round : Set₁ where
@@ -58,6 +58,7 @@ open FiniteGame
 
   Defining Hypergame would run into size issues if we didn't enable  `--type-in-type`.
 -}
+
 Hypergame : Round
 Hypergame = record { moves = FiniteGame ; subsequent-round = λ fg → playGame fg }
 
@@ -65,6 +66,7 @@ Hypergame = record { moves = FiniteGame ; subsequent-round = λ fg → playGame 
   The Hypergame is a finite game, since no matter what move you make in the first round, the game that
   you end up playing in the subsequent rounds is itself finite.
 -}
+
 isFinite-Hypergame : IsFinite Hypergame
 isFinite-Hypergame = all-subsequent-rounds-are-finite isFinite
 
@@ -81,6 +83,7 @@ finite-Hypergame = record { playGame = Hypergame ; isFinite = isFinite-Hypergame
   
   This sequence of moves is infinite. Hence Hypergame is not a finite game after all!
 -}
+
 isInfinite-Hypergame : IsFinite Hypergame → ⊥
 isInfinite-Hypergame (game-is-over x) = x finite-Hypergame
 isInfinite-Hypergame (all-subsequent-rounds-are-finite x) = isInfinite-Hypergame (x finite-Hypergame)
@@ -88,5 +91,6 @@ isInfinite-Hypergame (all-subsequent-rounds-are-finite x) = isInfinite-Hypergame
 {-
   We have established that Hypergame is finite, and then that Hypergame is not finite, a contradiction.
 -}
+
 paradox : ⊥
 paradox = isInfinite-Hypergame isFinite-Hypergame
