@@ -12,7 +12,6 @@ open import Data.Empty
 
 record Round : Set where
   inductive
-  constructor game
   field
     moves : Set
     subsequent-round : moves → Round
