@@ -12,8 +12,8 @@ You can read the proofs and explanations as ordinary UTF-8 text files (e.g. via 
 
 ## Table of Contents
 
-* [BuraliForti-Chains.agda](BuraliForti-Chains.agda): The straightforward version of the Burali-Forti paradox (the set of all well-ordered sets). Requires: `--type-in-type`, natural numbers.
-
+* [BuraliForti-Chains.agda](BuraliForti-Chains.agda): The straightforward version of the Burali-Forti paradox (does the set of all well-ordered sets have a well-ordering?) which defines descending chains explicitly using natural numbers. Requires: `--type-in-type`, sigma types, natural numbers.
+* [Russell-TypeIndexedSets.agda](Russell-TypeIndexedSets.agda): A version of Russell's paradox that uses (inductively defined) type-indexed sets to obtain an analogue of the set-theoretic membership relation. Requires: `--type-in-type`, inductive types.
 
 ## Contributing
 
