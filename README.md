@@ -10,9 +10,9 @@ We hope that the repository will serve as both a learning resource for those who
 
 You can read the proofs and explanations as ordinary UTF-8 text files (e.g. via Github's built-in viewer). Type-checking the proofs requires a fairly recent version of Agda (2.6.0.1 should suffice) and [its standard library](https://github.com/agda/agda-stdlib/releases/tag/v1.3).
 
-## Map
+## Table of Contents
 
-
+* [BuraliForti-Chains.agda](BuraliForti-Chains.agda): The straightforward version of the Burali-Forti paradox (the set of all well-ordered sets). Requires: `--type-in-type`, natural numbers.
 
 
 ## Contributing
