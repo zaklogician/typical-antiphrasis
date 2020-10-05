@@ -26,4 +26,4 @@ You can read the proofs and explanations as ordinary UTF-8 text files (e.g. via 
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request.
 
-Contributions that fix style issues/irregularities are welcome.
+This repository was created by merging many older ones (including some [very old ones](https://github.com/zaklogician/YablosParadox/tree/gh-pages)), written in multiple different styles. Contributions that fix style issues/irregularities are very welcome.
