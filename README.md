@@ -12,8 +12,11 @@ You can read the proofs and explanations as ordinary UTF-8 text files (e.g. via 
 
 ## Table of Contents
 
-* [BuraliForti-Chains.agda](BuraliForti-Chains.agda): The straightforward version of the Burali-Forti paradox (does the set of all well-ordered sets have a well-ordering?) which defines descending chains explicitly using natural numbers. Requires: `--type-in-type`, sigma types, natural numbers.
-* [Russell-TypeIndexedSets.agda](Russell-TypeIndexedSets.agda): A version of Russell's paradox that uses (inductively defined) type-indexed sets to obtain an analogue of the set-theoretic membership relation. Requires: `--type-in-type`, inductive types.
+* [BuraliForti-Chains.agda](BuraliForti-Chains.agda): The straightforward version of the Burali-Forti paradox (*does the set of all well-ordered sets admit a well-ordering?*) which defines descending chains explicitly using natural numbers. Requires: `--type-in-type`, sigma types, natural numbers.
+* [Hypergame.agda](Hypergame.agda): The hypergame paradox (*is the game where you can choose to play any finite game itself finite?*; provenance unknown), which one may regard as a variant of the Burali-Forti paradox. Requires: `--type-in-type`, inductive types.
+* [Liar.agda](Liar.agda): A version of the Liar paradox (*if I claim I'm lying, am I telling the truth?*) shows that the types of the constructors of an inductive data type may only occur strictly positively in the types of their arguments, on pain of inconsistency. Requires: `--no-positivity-check`, inductive types.
+* [Russell-TypeIndexedSets.agda](Russell-TypeIndexedSets.agda): A version of Russell's paradox (*does the set of all sets that do not contain themselves contain itself?*) that uses (inductively defined) type-indexed sets to obtain an analogue of the set-theoretic membership relation. Requires: `--type-in-type`, inductive types.
+* [Yablo.agda](Yablo.agda): Yablo's paradox (*if each Cretan asserts that all other Cretans are liars, is any one of them telling the truth?*) is a variant of the Liar paradox which demonstrates that positivity requirements cannot be relaxed even for parametrized (as opposed to indexed) types. Requires: `--no-positivity-check`, inductive types.
 
 ## Contributing
 
