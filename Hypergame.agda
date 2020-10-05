@@ -10,7 +10,7 @@ open import Data.Empty
   * for each possible move m, fully describing the subsequent round f(m).
 -}
 
-record Round : Set where
+record Round : Set₁ where
   inductive
   field
     moves : Set
@@ -22,7 +22,7 @@ open Round
   possible first moves, and descriptions of all possible subsequent rounds). 
 -}
 
-Game : Set
+Game : Set₁
 Game = Round
 
 {- 
@@ -44,7 +44,7 @@ data IsFinite (G : Game) : Set where
   game-is-over : (moves G → ⊥) → IsFinite G
   all-subsequent-rounds-are-finite : (∀ (m : moves G) → IsFinite (subsequent-round G m)) → IsFinite G
 
-record FiniteGame : Set where
+record FiniteGame : Set₁ where
   field
     playGame : Game
     isFinite : IsFinite playGame
@@ -55,6 +55,8 @@ open FiniteGame
   1. In the first round of the hypergame, you can choose any finite game G.
   2. In the subsequent rounds, play proceeds as if you were playing the game G that you picked in the
      first round. The Hypergame concludes once G is over.
+
+  Defining Hypergame would run into size issues if we didn't enable  `--type-in-type`.
 -}
 Hypergame : Round
 Hypergame = record { moves = FiniteGame ; subsequent-round = λ fg → playGame fg }
